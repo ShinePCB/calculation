@@ -1,0 +1,27 @@
+.claude/
+.openai/
+.wrangler/
+
+node_modules/
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Native build caches and local configuration
+app/node_modules/
+app/android/.gradle/
+app/android/local.properties
+app/android/app/build/
+app/android/build/
+app/ios/App/DerivedData/
+app/ios/App/xcuserdata/
+
+# Never commit signing credentials
+*.jks
+*.keystore
+*.p12
+*.mobileprovision

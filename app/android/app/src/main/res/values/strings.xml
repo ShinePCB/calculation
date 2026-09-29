@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PCB 计算器</string>
+    <string name="title_activity_main">PCB 计算器</string>
+    <string name="package_name">com.shinepcb.calculator</string>
+    <string name="custom_url_scheme">com.shinepcb.calculator</string>
+</resources>

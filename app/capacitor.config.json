@@ -1,0 +1,9 @@
+{
+  "appId": "com.shinepcb.calculator",
+  "appName": "PCB 计算器",
+  "webDir": "../dist",
+  "backgroundColor": "#ffffff",
+  "android": {
+    "backgroundColor": "#ffffff"
+  }
+}

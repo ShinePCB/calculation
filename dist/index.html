@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="PCB 计算器：传输线、走线宽度、过孔、电气间距等计算，计算内核编译为 WebAssembly 在本地运行。">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=1d24384213">
+  <title>LayerLine PCB 计算器</title>
+</head>
+<body>
+  <div class="shell">
+    <nav class="sidenav" id="sideNav" aria-label="计算工具"></nav>
+    <main class="main" id="main" tabindex="-1">
+      <div class="page-head">
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="sideNav">☰ 页面</button>
+        <p class="page-cat" id="pageCat"></p>
+        <h1 id="pageTitle">载入中</h1>
+        <p class="page-desc" id="pageDesc"></p>
+      </div>
+      <div id="pageBody" class="page-body"></div>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js?v=1d24384213"></script>
+</body>
+</html>

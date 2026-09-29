@@ -1,0 +1,19 @@
+{
+  "name": "shinepcb-calculation-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KiCad PCB Calculator for the web and mobile",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://calculation.shinepcba.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShinePCB/calculation.git"
+  },
+  "scripts": {
+    "test": "node scripts/test-wasm.mjs",
+    "stamp": "node scripts/stamp-version.mjs",
+    "deploy:check": "pnpm dlx wrangler@4.142.0 deploy --dry-run",
+    "deploy": "pnpm dlx wrangler@4.142.0 deploy"
+  },
+  "packageManager": "pnpm@11.19.0"
+}
