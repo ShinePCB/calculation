@@ -189,6 +189,10 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
 .page-cat { margin: 0 0 4px; font-size: var(--fs-xs); color: var(--muted); letter-spacing: 0.06em; }
 .page-head h1 { font-size: var(--fs-xl); font-weight: 650; letter-spacing: -0.005em; }
 .page-desc { margin: 6px 0 0; color: var(--ink-2); }
+.language-switch { display: flex; justify-content: flex-end; gap: .75rem; margin-bottom: .75rem; font-size: var(--fs-sm); }
+.language-switch a { color: var(--muted); text-decoration: none; }
+.language-switch a[aria-current="true"] { color: var(--ink); font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+html[data-embedded="true"] .language-switch { display: none; }
 .formula {
   display: inline-block;
   margin-top: 10px;
@@ -551,4 +555,20 @@ dialog.picker::backdrop { background: rgb(15 20 17 / 0.4); }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+
+/* The host page owns document scrolling when embedded in the ShinePCB site. */
+html[data-embedded="true"] body { min-height: 0; padding: 0; }
+html[data-embedded="true"] .shell { flex: none; }
+html[data-embedded="true"] .sidenav { max-height: var(--embed-viewport-height, 800px); }
+html[data-embedded="true"] .table-wrap.tall { max-height: calc(var(--embed-viewport-height, 800px) * .7); }
+html[data-embedded="true"] dialog {
+  top: calc(var(--embed-visible-top, 0px) + 24px);
+  bottom: auto;
+  margin-block: 0;
+  max-height: max(160px, calc(var(--embed-visible-height, 800px) - 48px));
+}
+@media (max-width: 900px) {
+  html[data-embedded="true"] .sidenav { bottom: auto; max-height: var(--embed-visible-height, 800px); }
+  html[data-embedded="true"] .sidenav.is-open { top: var(--embed-visible-top, 0px); }
 }

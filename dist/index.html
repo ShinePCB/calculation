@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=1d24384213">
+  <link rel="stylesheet" href="./styles.css?v=1ad2579f01">
   <title>LayerLine PCB 计算器</title>
 </head>
 <body>
@@ -15,6 +15,10 @@
     <nav class="sidenav" id="sideNav" aria-label="计算工具"></nav>
     <main class="main" id="main" tabindex="-1">
       <div class="page-head">
+        <nav class="language-switch" aria-label="Language">
+          <a href="?lang=zh" data-calculator-language="zh" lang="zh-CN">中文</a>
+          <a href="?lang=en" data-calculator-language="en" lang="en">English</a>
+        </nav>
         <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="sideNav">☰ 页面</button>
         <p class="page-cat" id="pageCat"></p>
         <h1 id="pageTitle">载入中</h1>
@@ -24,6 +28,7 @@
     </main>
   </div>
 
-  <script type="module" src="./app.js?v=1d24384213"></script>
+  <script type="module" src="./embed.js?v=1ad2579f01"></script>
+  <script type="module" src="./app.js?v=1ad2579f01"></script>
 </body>
 </html>

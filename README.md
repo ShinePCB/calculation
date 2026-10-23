@@ -89,6 +89,39 @@ for as long as you like.
 
 Serve `dist/` with any static HTTP server. Opening `index.html` directly will not load the WASM module in some browsers.
 
+## Interface languages
+
+`?lang=zh` selects Chinese and `?lang=en` selects English. The standalone
+page has a language switch that preserves the selected tool (URL fragment).
+The original URL without a language parameter keeps its Chinese interface;
+other explicit language values use English.
+
+Both languages use the same pages, formulas, input defaults and WASM engine.
+`dist/i18n.js` translates application text and static template segments.
+User-entered model names, imported data and numeric results are not translated.
+Reference-table labels, validation messages, file-operation messages and
+material-picker descriptions are included in the English interface.
+
+## Embed in the ShinePCB website
+
+Load `https://calculation.shinepcba.com/?lang=en&embed=1` in an iframe to use the
+optional website integration. `dist/embed.js` accepts initialization messages
+only from its parent at `https://shinepcba.com`, `https://www.shinepcba.com`
+or an HTTP localhost/127.0.0.1 development origin. It reports the natural
+content height, tool navigation and viewport-aware dialog positioning.
+The standalone UI and calculation engine retain their existing behavior.
+The host's Chinese route uses `lang=zh`; all six other website languages use
+`lang=en`. The standalone language switch is hidden in embedded mode so the
+host page determines the calculator language.
+
+The host must allow scripts, the calculator's origin/storage, forms and file
+downloads in its iframe sandbox. Delegate `clipboard-write` for the copy
+button; the calculator retains its manual-copy fallback. Allow popups to open
+external links without inheriting the iframe sandbox. Keep the GPL source
+link to [GitHub](https://github.com/ShinePCB/calculation) available; no source
+archive is hosted with the calculator. Deploy this embed support before publishing the
+website's `/<locale>/calculator/` page.
+
 ## Deploy
 
 The production site is deployed to Cloudflare Workers Static Assets at

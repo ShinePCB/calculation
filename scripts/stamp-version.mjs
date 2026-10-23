@@ -9,12 +9,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const dist = path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."), "dist");
-const TEXT = ["index.html", "app.js", "pages.js", "transline.js", "styles.css"];
+const TEXT = ["index.html", "app.js", "pages.js", "transline.js", "styles.css", "embed.js", "i18n.js"];
 const BINARY = ["kicad-transline.wasm", "kicad-reference-data.json"];
 const STAMP = /\?v=[0-9a-f]+/g;
 // Every in-page reference to a versioned file, e.g. "./app.js" or "./app.js?v=0123abcd".
 // Modules must all use the same URL for app.js, or the browser would load it twice.
-const REF = /(\.\/(?:styles\.css|app\.js|pages\.js|transline\.js|kicad-transline\.wasm|kicad-reference-data\.json))(?:\?v=[0-9a-f]+)?(?=["'`])/g;
+const REF = /(\.\/(?:styles\.css|app\.js|pages\.js|transline\.js|embed\.js|i18n\.js|kicad-transline\.wasm|kicad-reference-data\.json))(?:\?v=[0-9a-f]+)?(?=["'`])/g;
 
 const texts = Object.fromEntries(await Promise.all(TEXT.map(async (f) => [f, await readFile(path.join(dist, f), "utf8")])));
 const hash = createHash("sha256");
